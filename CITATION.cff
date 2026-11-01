@@ -5,9 +5,9 @@ version: 0.1.0
 date-released: 2026-11-01
 license: MIT
 authors:
-  - family-names: "[Surname]"
-    given-names: "[Given name]"
-    affiliation: "[Affiliation]"
+  - family-names: "Karaman"
+    given-names: "Selçuk"
+    affiliation: "Ankara Hacı Bayram Veli University"
 keywords:
   - AI-enabled research
   - provenance

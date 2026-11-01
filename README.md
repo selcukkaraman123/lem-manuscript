@@ -2,6 +2,8 @@
 
 **A publication architecture that makes AI's role in research auditable, from data analysis to theory building and drafting.**
 
+Prof. Dr. Selçuk Karaman, Ankara Hacı Bayram Veli University.
+
 Research artifact accompanying a proposal to the *Organization Science* special issue "AI-Assisted Frontiers in Organizational Science". Status: **proof of concept (v0.1)**. See [STATUS.md](STATUS.md) for what works and what is planned.
 
 ## The idea in one table
