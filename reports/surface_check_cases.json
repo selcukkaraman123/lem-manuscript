@@ -1,0 +1,26 @@
+{
+  "spelling_fix": {
+    "before": "The resuls suggest that trust mediates the efect of remote work on voice.",
+    "after": "The results suggest that trust mediates the effect of remote work on voice.",
+    "semantic_delta": 0.0,
+    "hedge_shift": false,
+    "escalated": false,
+    "threshold": 0.15
+  },
+  "hedge_to_certainty": {
+    "before": "These results may suggest that trust mediates the effect.",
+    "after": "These results demonstrate that trust mediates the effect.",
+    "semantic_delta": 0.2,
+    "hedge_shift": true,
+    "escalated": true,
+    "threshold": 0.15
+  },
+  "claim_replaced": {
+    "before": "Trust mediates the effect.",
+    "after": "Our data show that trust has no effect on voice in hybrid teams.",
+    "semantic_delta": 1.0,
+    "hedge_shift": false,
+    "escalated": true,
+    "threshold": 0.15
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "summary_faithful": {
+    "n_claims": 6,
+    "n_unsupported": 0,
+    "cdi": 0.0,
+    "threshold": 0.3,
+    "unsupported": []
+  },
+  "summary_drifted": {
+    "n_claims": 5,
+    "n_unsupported": 4,
+    "cdi": 0.8,
+    "threshold": 0.3,
+    "unsupported": [
+      {
+        "claim": "The format has already been adopted by three management journals as a submission requirement.",
+        "best_match": "Journals cannot tell AI-heavy, low-engagement work from carefully directed AI-enabled research, because the format records neither.",
+        "score": 0.172
+      },
+      {
+        "claim": "It proves that papers written with AI assistance are of lower quality than human-written papers.",
+        "best_match": "Readers increasingly meet papers through AI summaries.",
+        "score": 0.233
+      },
+      {
+        "claim": "In a pilot, reviewers using LEM detected seeded errors twice as often as reviewers using PDFs.",
+        "best_match": "We recruit [N ≈ 60] reviewers from management and information systems.",
+        "score": 0.16
+      },
+      {
+        "claim": "The authors recommend banning proprietary language models from academic writing altogether.",
+        "best_match": "The cognitive division of labor in research writing becomes transparent and quantifiable.",
+        "score": 0.1
+      }
+    ]
+  }
+}

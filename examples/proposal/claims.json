@@ -1,0 +1,108 @@
+[
+  {
+    "id": "C1",
+    "origin": "model",
+    "p_steps": [
+      "I01",
+      "D01"
+    ],
+    "text": "IMRAD assumes one authorial voice: everything in the text is attributed to the named authors, and methods are described in prose rather than executed."
+  },
+  {
+    "id": "C2",
+    "origin": "author",
+    "p_steps": [
+      "I02"
+    ],
+    "text": "A statement such as 'we used ChatGPT' does not tell a reader whether the model corrected commas or built the central thesis (ghost-thinking)."
+  },
+  {
+    "id": "C3",
+    "origin": "co-constructed",
+    "p_steps": [
+      "I01"
+    ],
+    "text": "LEM replaces the single-voice IMRAD article with three separable layers: Human, Process and Reader."
+  },
+  {
+    "id": "C4",
+    "origin": "model",
+    "p_steps": [
+      "I01"
+    ],
+    "text": "The Claim Drift Index is the share of atomic claims in a rendering that are unsupported by, or contradict, the H layer."
+  },
+  {
+    "id": "C5",
+    "origin": "model",
+    "p_steps": [
+      "I02"
+    ],
+    "text": "Analytic steps are validated by re-execution; cognitive steps are validated by traceability of what the model proposed and what the author accepted, rejected or rewrote."
+  },
+  {
+    "id": "C6",
+    "origin": "author",
+    "p_steps": [
+      "I02"
+    ],
+    "text": "Two-tier logging records substantive cognitive steps in full with an override log and surface edits only as meta-tags."
+  },
+  {
+    "id": "C7",
+    "origin": "model",
+    "p_steps": [
+      "I02"
+    ],
+    "text": "A surface edit whose semantic delta exceeds a threshold, such as turning 'may suggest' into 'demonstrates', is escalated to substantive automatically."
+  },
+  {
+    "id": "C8",
+    "origin": "co-constructed",
+    "p_steps": [
+      "I03"
+    ],
+    "text": "LEM is adopted in three conformance levels: LEM-0 Analytic Provenance, LEM-1 Cognitive Provenance and LEM-2 Attested Provenance."
+  },
+  {
+    "id": "C9",
+    "origin": "model",
+    "p_steps": [
+      "I03"
+    ],
+    "text": "LEM-2 adds assurance, not scope: records are captured automatically and sealed in a hash chain so they cannot be curated after the fact."
+  },
+  {
+    "id": "C10",
+    "origin": "model",
+    "p_steps": [
+      "I03"
+    ],
+    "text": "Comparing LEM-1 declarations with LEM-2 captured records shows how far self-declared AI contribution departs from captured contribution."
+  },
+  {
+    "id": "C11",
+    "origin": "author",
+    "p_steps": [
+      "I02"
+    ],
+    "text": "LEM makes it measurable whether social scientists use AI as an idea generator or only as a grammar assistant."
+  },
+  {
+    "id": "C12",
+    "origin": "co-constructed",
+    "p_steps": [
+      "I02",
+      "D02"
+    ],
+    "text": "The override log is the evidence that a human, not the model, decided what the paper claims."
+  },
+  {
+    "id": "C13",
+    "origin": "model",
+    "p_steps": [
+      "I04"
+    ],
+    "text": "The reference manuscript in the repository is this proposal documented in its own format at LEM-1."
+  }
+]

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lem-manuscript/schema/lem-v0.1.schema.json",
+  "title": "Layered Executable Manuscript (LEM) v0.1",
+  "description": "Schema for the P (Process) layer records, the claim index and the manifest of a LEM manuscript.",
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "model": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "provider": { "type": "string" },
+        "open_weights": { "type": "boolean" }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "description": "How the record entered the log. LEM-2 requires source = capture-logger.",
+      "required": ["source"],
+      "properties": {
+        "source": { "enum": ["capture-logger", "author-assembled"] },
+        "note": { "type": "string" }
+      }
+    },
+    "redaction": {
+      "type": "object",
+      "required": ["redacted", "reason"],
+      "properties": {
+        "redacted": { "const": true },
+        "reason": { "type": "string", "minLength": 5 },
+        "content_hash": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "text_or_redacted": {
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/redaction" }
+      ]
+    },
+    "override_entry": {
+      "type": "object",
+      "required": ["proposal", "decision"],
+      "properties": {
+        "proposal": { "type": "string" },
+        "decision": { "enum": ["accepted", "rejected", "rewritten"] },
+        "author_note": { "type": "string" }
+      }
+    },
+    "base_step": {
+      "type": "object",
+      "required": ["id", "type", "timestamp", "capture", "prev_hash", "hash"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+$" },
+        "type": { "enum": ["P_analytic", "P_ideation", "P_drafting", "P_surface"] },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "capture": { "$ref": "#/$defs/capture" },
+        "prev_hash": { "oneOf": [{ "$ref": "#/$defs/sha256" }, { "const": "GENESIS" }] },
+        "hash": { "$ref": "#/$defs/sha256" },
+        "model": { "$ref": "#/$defs/model" }
+      }
+    },
+    "P_analytic": {
+      "description": "Executed step (coding, classification, extraction). Validated by re-execution.",
+      "allOf": [{ "$ref": "#/$defs/base_step" }],
+      "required": ["model", "prompt", "parameters", "input_hash", "output", "output_hash"],
+      "properties": {
+        "type": { "const": "P_analytic" },
+        "prompt": { "type": "string" },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "temperature": { "type": "number" },
+            "seed": { "type": "integer" }
+          }
+        },
+        "input_ref": { "type": "string" },
+        "input_hash": { "$ref": "#/$defs/sha256" },
+        "output": { "type": "string" },
+        "output_hash": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "P_ideation": {
+      "description": "Substantive cognitive step: hypothesis generation, theory building, literature synthesis. Validated by traceability.",
+      "allOf": [{ "$ref": "#/$defs/base_step" }],
+      "required": ["model", "prompt", "model_output", "override_log"],
+      "properties": {
+        "type": { "const": "P_ideation" },
+        "prompt": { "$ref": "#/$defs/text_or_redacted" },
+        "model_output": { "$ref": "#/$defs/text_or_redacted" },
+        "override_log": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/override_entry" }
+        }
+      }
+    },
+    "P_drafting": {
+      "description": "Substantive cognitive step: author notes or skeleton turned into text. Records the semantic diff between skeleton, model draft and final H text.",
+      "allOf": [{ "$ref": "#/$defs/base_step" }],
+      "required": ["model", "author_skeleton", "model_draft", "final_ref", "override_log"],
+      "properties": {
+        "type": { "const": "P_drafting" },
+        "author_skeleton": { "$ref": "#/$defs/text_or_redacted" },
+        "model_draft": { "$ref": "#/$defs/text_or_redacted" },
+        "model_draft_ref": { "type": "string" },
+        "final_ref": { "type": "string", "description": "Path of the H-layer text this draft fed into." },
+        "semantic_delta": {
+          "type": ["object", "null"],
+          "properties": {
+            "retained": { "type": "number" },
+            "added": { "type": "number" },
+            "removed": { "type": "number" },
+            "delta": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "override_log": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/override_entry" }
+        }
+      }
+    },
+    "P_surface": {
+      "description": "Surface step: spelling, grammar and tone calibration only. Logged as a meta-tag; escalated to substantive if the semantic delta exceeds the threshold.",
+      "allOf": [{ "$ref": "#/$defs/base_step" }],
+      "required": ["model", "purpose", "semantic_delta", "escalated"],
+      "properties": {
+        "type": { "const": "P_surface" },
+        "purpose": { "enum": ["spelling", "grammar", "tone", "translation-polish"] },
+        "semantic_delta": { "type": "number", "minimum": 0, "maximum": 1 },
+        "hedge_shift": { "type": "boolean" },
+        "escalated": { "type": "boolean" }
+      }
+    },
+    "step": {
+      "oneOf": [
+        { "$ref": "#/$defs/P_analytic" },
+        { "$ref": "#/$defs/P_ideation" },
+        { "$ref": "#/$defs/P_drafting" },
+        { "$ref": "#/$defs/P_surface" }
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "text", "origin", "p_steps"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^C[0-9]+$" },
+        "text": { "type": "string" },
+        "origin": {
+          "enum": ["author", "model", "co-constructed"],
+          "description": "author = idea came from the human author; model = proposed by the model and accepted; co-constructed = author idea formalized or extended by the model."
+        },
+        "p_steps": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "required": ["lem_version", "conformance_level", "title", "h_layer", "h_hash", "claims", "p_steps"],
+      "properties": {
+        "lem_version": { "const": "0.1" },
+        "conformance_level": { "enum": ["LEM-0", "LEM-1", "LEM-2"] },
+        "title": { "type": "string" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "h_layer": { "type": "string" },
+        "h_hash": { "$ref": "#/$defs/sha256" },
+        "claims": { "type": "string" },
+        "p_steps": { "type": "array", "items": { "type": "string" } },
+        "r_layer": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

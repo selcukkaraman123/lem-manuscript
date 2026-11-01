@@ -1,0 +1,25 @@
+{
+  "id": "A06",
+  "type": "P_analytic",
+  "model": {
+    "name": "lem-mock-classifier",
+    "version": "0.1",
+    "provider": "local (deterministic mock, not an LLM)",
+    "open_weights": true
+  },
+  "prompt": "Classify how AI was used in this statement from a researcher. Answer with one label: idea-generation, drafting, editing, none.",
+  "parameters": {
+    "temperature": 0.0,
+    "seed": 42
+  },
+  "input_ref": "inputs.txt#L6",
+  "input_hash": "7bb18bd9b7e44b160ac7de249b86e422f1ce2d70b7ab0007ed08ec2940a07853",
+  "output": "drafting",
+  "output_hash": "bd9125df00d4839d81170540c85f86c2da3e24bfad48f4375b1920f1e33782f3",
+  "timestamp": "2026-11-01T07:49:16+00:00",
+  "capture": {
+    "source": "capture-logger"
+  },
+  "prev_hash": "4316144da48c257903c7b90c4399bf8ce2c657056a92f9012c057a7edd45f17d",
+  "hash": "090bf721acd5e6cf2c45163181ebea5e1e56a343a83794142304911728f85f3e"
+}

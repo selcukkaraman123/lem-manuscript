@@ -1,0 +1,44 @@
+{
+  "manuscript": "examples/toy-analytic",
+  "backend": "lem-mock-classifier (local (deterministic mock, not an LLM))",
+  "n_analytic_steps": 6,
+  "exact_match_rate": 1.0,
+  "results": [
+    {
+      "id": "A01",
+      "reference": "idea-generation",
+      "reexecuted": "idea-generation",
+      "exact_match": true
+    },
+    {
+      "id": "A02",
+      "reference": "drafting",
+      "reexecuted": "drafting",
+      "exact_match": true
+    },
+    {
+      "id": "A03",
+      "reference": "editing",
+      "reexecuted": "editing",
+      "exact_match": true
+    },
+    {
+      "id": "A04",
+      "reference": "none",
+      "reexecuted": "none",
+      "exact_match": true
+    },
+    {
+      "id": "A05",
+      "reference": "idea-generation",
+      "reexecuted": "idea-generation",
+      "exact_match": true
+    },
+    {
+      "id": "A06",
+      "reference": "drafting",
+      "reexecuted": "drafting",
+      "exact_match": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lem_version": "0.1",
+  "conformance_level": "LEM-1",
+  "title": "Executable Manuscripts: An Auditable Layered Architecture for Publishing AI-Enabled Organizational Research",
+  "authors": [
+    "[Author name, affiliation]"
+  ],
+  "h_layer": "H.md",
+  "h_hash": "f9ab48ac2d362f1075beb33a1a346753e21c03f7a8c362cd04b68787d9bd63bf",
+  "claims": "claims.json",
+  "p_steps": [
+    "P/001_I01.json",
+    "P/002_D01.json",
+    "P/003_I02.json",
+    "P/004_I03.json",
+    "P/005_D02.json",
+    "P/006_I04.json"
+  ],
+  "r_layer": [
+    "R/summary_faithful.md",
+    "R/summary_drifted.md"
+  ],
+  "notes": "Written by a human author with Claude (Anthropic) in one session on 2026-11-01. P records are author-assembled from the conversation, so the manuscript conforms to LEM-1, not LEM-2. Model outputs are stored as excerpts; one superseded draft is marked as redacted with its reason."
+}

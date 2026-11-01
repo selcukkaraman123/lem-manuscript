@@ -1,0 +1,28 @@
+[
+  {
+    "id": "C1",
+    "origin": "author",
+    "p_steps": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06"
+    ],
+    "text": "The six statements split into idea generation, drafting, editing and no AI use as reported."
+  },
+  {
+    "id": "C2",
+    "origin": "author",
+    "p_steps": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06"
+    ],
+    "text": "Every classification can be re-executed from its sealed record."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "D02",
+  "type": "P_drafting",
+  "model": {
+    "name": "Claude Opus 5.5",
+    "version": "claude-opus-5-5",
+    "provider": "Anthropic (claude.ai)",
+    "open_weights": false
+  },
+  "capture": {
+    "source": "author-assembled",
+    "note": "Compiled after the session from the conversation record; not captured live."
+  },
+  "author_skeleton": "Directives of I02 and decisions of I03: 'Tablodaki ad setleri uygun ... son halini oluştur'.",
+  "model_draft": "Revised proposal (Summary, sections 1-7, references). Full text kept in the proposal document.",
+  "model_draft_ref": "Proposal document, revision of 2026-11-01 10:35 (Istanbul)",
+  "final_ref": "H.md",
+  "semantic_delta": null,
+  "override_log": [
+    {
+      "proposal": "Revised full draft",
+      "decision": "accepted",
+      "author_note": "Accepted pending the author's own revision. Run `lem delta` on draft vs. final H after editing."
+    }
+  ],
+  "timestamp": "2026-11-01T10:35:00+03:00",
+  "prev_hash": "c0c56e02ee928b651f4994f9fcb22d0316fb7b88046713b7bccf1bb1721f1368",
+  "hash": "b7e082929e414c292480e53d89875f8a220132e5e813cbf41f863d0e02ad2765"
+}

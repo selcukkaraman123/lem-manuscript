@@ -1,0 +1,20 @@
+{
+  "lem_version": "0.1",
+  "conformance_level": "LEM-2",
+  "title": "Toy analytic example (LEM-2 mechanism demo)",
+  "authors": [
+    "LEM toolkit"
+  ],
+  "h_layer": "H.md",
+  "h_hash": "446d6279debe6b1cc89d808eeed8112dcc0b0844e744b6711710f6f6411844e4",
+  "claims": "claims.json",
+  "p_steps": [
+    "P/001_A01.json",
+    "P/002_A02.json",
+    "P/003_A03.json",
+    "P/004_A04.json",
+    "P/005_A05.json",
+    "P/006_A06.json"
+  ],
+  "notes": "Captured live by lem.capture with the deterministic mock backend."
+}

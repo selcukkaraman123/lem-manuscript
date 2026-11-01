@@ -1,0 +1,38 @@
+{
+  "id": "I01",
+  "type": "P_ideation",
+  "model": {
+    "name": "Claude Opus 5.5",
+    "version": "claude-opus-5-5",
+    "provider": "Anthropic (claude.ai)",
+    "open_weights": false
+  },
+  "capture": {
+    "source": "author-assembled",
+    "note": "Compiled after the session from the conversation record; not captured live."
+  },
+  "prompt": "makale çağrısı https://orgsci.org/ bu adrese bakar mısın buraya bir makale önerisi gönderelim, fikir bilimin yayınlanmasında yeni yazım modeli IMRAD alternatifi, yapay zekanın yaptığı şeylerin görünmediği okuyucularında yapay zekayla özetlettirince gördüğü kısımların olduğu diğer kısımların promptlardan oluştuğu bir bilimsel yayın formatı sistemi tasarlıyorum. bu sayı için uygun olur mu? editörlerin gözünden değerlendir.",
+  "model_output": "[Excerpt] Fit is partial as a 'new writing format'; strong if reframed as auditable provenance for AI-enabled research. Proposed a three-layer structure: H (human claims), P (executable prompts and model records), R (reader-side AI renderings, outside the record). Proposed a claim-level measure of drift between reader summaries and author claims. Flagged risks: reproducibility of reader-generated parts, 'AI slop' perception, missing organizational framing, required Git prototype. Suggested Letter format as fallback.",
+  "override_log": [
+    {
+      "proposal": "Reframe from a new writing format to auditable provenance of AI-enabled research",
+      "decision": "accepted",
+      "author_note": "Author: 'Bunu bugüne yetiştireceğiz' (we will make the deadline today)."
+    },
+    {
+      "proposal": "Three layers H / P / R formalizing the author's idea of prompt parts and reader-side AI summaries",
+      "decision": "accepted"
+    },
+    {
+      "proposal": "Claim-level drift measure for reader renderings (later named CDI)",
+      "decision": "accepted"
+    },
+    {
+      "proposal": "Letter format as fallback",
+      "decision": "accepted"
+    }
+  ],
+  "timestamp": "2026-11-01T09:28:00+03:00",
+  "prev_hash": "GENESIS",
+  "hash": "2ac4f5e939fe2d59ebf26a5351821cf9d232c3badae96cbbed66250bb5599d06"
+}

@@ -1,0 +1,10 @@
+{
+  "manuscript": "examples/proposal",
+  "conformance_level": "LEM-1",
+  "n_steps": 6,
+  "n_claims": 13,
+  "n_redacted_fields": 1,
+  "valid": true,
+  "errors": [],
+  "warnings": []
+}

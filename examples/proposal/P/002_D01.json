@@ -1,0 +1,31 @@
+{
+  "id": "D01",
+  "type": "P_drafting",
+  "model": {
+    "name": "Claude Opus 5.5",
+    "version": "claude-opus-5-5",
+    "provider": "Anthropic (claude.ai)",
+    "open_weights": false
+  },
+  "capture": {
+    "source": "author-assembled",
+    "note": "Compiled after the session from the conversation record; not captured live."
+  },
+  "author_skeleton": "Bunu bugüne yetiştireceğiz, önce öneri metnini oluşturalım. + accepted decisions of I01.",
+  "model_draft": {
+    "redacted": true,
+    "reason": "First full draft (sections Summary-7) was superseded in place and not archived. This gap is a known limitation of author-assembled LEM-1 records; the LEM-2 capture logger closes it."
+  },
+  "final_ref": "H.md",
+  "semantic_delta": null,
+  "override_log": [
+    {
+      "proposal": "First full draft of the proposal",
+      "decision": "rewritten",
+      "author_note": "Author issued revision directives extending the P layer to cognitive writing (see I02)."
+    }
+  ],
+  "timestamp": "2026-11-01T09:34:00+03:00",
+  "prev_hash": "2ac4f5e939fe2d59ebf26a5351821cf9d232c3badae96cbbed66250bb5599d06",
+  "hash": "d2fe839d373c76a421769e136527c961b40eecef8ad7254e3905bca0bb5b463e"
+}

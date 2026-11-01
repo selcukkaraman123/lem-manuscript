@@ -1,0 +1,42 @@
+{
+  "id": "I03",
+  "type": "P_ideation",
+  "model": {
+    "name": "Claude Opus 5.5",
+    "version": "claude-opus-5-5",
+    "provider": "Anthropic (claude.ai)",
+    "open_weights": false
+  },
+  "capture": {
+    "source": "author-assembled",
+    "note": "Compiled after the session from the conversation record; not captured live."
+  },
+  "prompt": "Şimdi tüm sürecin kontrollü bir yapay zeka ortamında yürütülme zorunluluğu mu doğdu. bunu aşamalı mı yapsak LEM 0 ve LEM 1 denebilir mi LEM 0 ilk hali LEM 1 yz makale diğer katkıların da görünür olduğu hal, sen bunlara güzel isimler bularak ifade et bakalım nasıl duracak",
+  "model_output": "[Excerpt] A controlled environment is not required if levels are staged. Separated scope (what is logged) from assurance (how records are trusted) and proposed three levels: LEM-0 Analytic Provenance, LEM-1 Cognitive Provenance, LEM-2 Attested Provenance (instrumented, hash-sealed capture). Offered an alternative metaphor set (Glass Lab / Glass Desk / Sealed Desk). Proposed comparing LEM-1 declarations with LEM-2 captured records as a study.",
+  "override_log": [
+    {
+      "proposal": "Staged adoption (LEM-0, LEM-1)",
+      "decision": "accepted",
+      "author_note": "Staging was the author's own proposal; the model extended it."
+    },
+    {
+      "proposal": "Add a third level, LEM-2 Attested Provenance",
+      "decision": "accepted"
+    },
+    {
+      "proposal": "Names: Analytic / Cognitive / Attested Provenance",
+      "decision": "accepted"
+    },
+    {
+      "proposal": "Alternative names: Glass Lab / Glass Desk / Sealed Desk",
+      "decision": "rejected"
+    },
+    {
+      "proposal": "Study comparing declared (LEM-1) and captured (LEM-2) contribution",
+      "decision": "accepted"
+    }
+  ],
+  "timestamp": "2026-11-01T10:32:00+03:00",
+  "prev_hash": "aeb54bfb5e8e6371e2fd3329240189fdba4945e1fae56484c3c7b8a2e7c9f099",
+  "hash": "c0c56e02ee928b651f4994f9fcb22d0316fb7b88046713b7bccf1bb1721f1368"
+}

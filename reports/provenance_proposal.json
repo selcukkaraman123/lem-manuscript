@@ -1,0 +1,37 @@
+{
+  "title": "Executable Manuscripts: An Auditable Layered Architecture for Publishing AI-Enabled Organizational Research",
+  "conformance_level": "LEM-1",
+  "claims_by_origin": {
+    "model": {
+      "n": 7,
+      "share": 0.54
+    },
+    "author": {
+      "n": 3,
+      "share": 0.23
+    },
+    "co-constructed": {
+      "n": 3,
+      "share": 0.23
+    }
+  },
+  "share_of_claims_traceable_to_P_ideation": 1.0,
+  "override_decisions": {
+    "accepted": {
+      "n": 17,
+      "share": 0.89
+    },
+    "rewritten": {
+      "n": 1,
+      "share": 0.05
+    },
+    "rejected": {
+      "n": 1,
+      "share": 0.05
+    }
+  },
+  "p_steps_by_type": {
+    "P_ideation": 4,
+    "P_drafting": 2
+  }
+}
